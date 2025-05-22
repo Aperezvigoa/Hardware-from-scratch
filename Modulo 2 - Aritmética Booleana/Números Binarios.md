@@ -1,0 +1,45 @@
+Los números binarios se representan como 1 o 0. ¿Qué podemos representar con ellos?
+
+Podemos representar números:
+
+| Binary | Decimal |
+| ------ | ------- |
+| 0      | 0       |
+| 1      | 1       |
+| 10     | 2       |
+| 11     | 3       |
+| 100    | 4       |
+| 101    | 5       |
+| 110    | 6       |
+| 111    | 7       |
+¿Cómo sucede esto?
+
+Con los números decimales utilizamos base 10, esto significa que si tenemos por ejemplo 789 la representación sería:
+
+7 \* 10² + 8 \* 10 + 9 \* 1  -> 789
+
+Lo mismo sucede con los números binarios, la diferencia es que serán potencia de 2 en vez de 10:
+
+1 0 1 (binario)
+1 \* 2² + 0 \* 2¹ + 1 \* 2⁰ -> 4 + 0 + 1 -> 5
+
+En los ordenadores, normalmente tenemos un número fijo de bits que se asigna. Entonces, como mucho podremos representar un valor máximo con ese valor máximo de longitud. Es decir, podemos tener 8 bits, y el valor máximo que podríamos representar es 256
+
+0000 0000 .. 1111 1111 -> 2⁸
+
+pero si queremos representar números negativos en el mismo espacio, tendríamos la mitad como valor máximo, 127
+
+0111 1111 -> 127
+(1)000 0000 -> Números negativos
+
+Es decir, utilizamos el primer bit (desde la izquierda) para determinar si el número es negativo o positivo.
+
+##### ¿Cómo convertimos de decimal a binario?
+
+Debemos ir sumando la potencia de 2 que quepa en el número, ejemplo:
+
+87 = 64 + 16 + 4 + 2 + 1 -> 2 \* 2⁴ + 2 \* 2³ + 2 \* 2² + 2 \* 2^1 + 1 \* 2⁰
+64  32  16   8    4    2    1
+1     0    1     0    1     1    1
+
+99 = 64 + 32 + 2 + 1 -> 01 1 0  0 0 1 1
